@@ -1,9 +1,16 @@
 require 'zipruby'
 require 'fileutils'
+
 class Parser
 
+  # Main entry point
+  def self.process
+
+  end
+
+  # TODO: Extract into a archive utils module
   # Returns all files for a given set of extentsions in a given directory
-  def self.find_reports(dir = spool_dir, extensions = ['zip'])
+  def self.find_reports(dir = compressed_spool_dir, extensions = ['zip'])
 
     reports = extensions.collect do |ext|
       Dir.glob(File.join(dir, '*.'+ext))
@@ -13,7 +20,7 @@ class Parser
   end
 
   # Extract XML files from an array of ZIP files
-  def self.unarchive_reports(reports=[])
+  def self.decompress_reports(reports=[], dir = decompressed_spool_dir )
 
     files = []
 
@@ -25,13 +32,10 @@ class Parser
           else
             dirname = File.dirname(zf.name)
             FileUtils.mkdir_p(dirname) unless File.exist?(dirname)
-
             open(zf.name, 'wb') do |f|
               f << zf.read
             end
-
             files << zf.name
-
           end
         end
       end
@@ -40,14 +44,16 @@ class Parser
     files
   end
 
-  def self.process
-
-  end
-
-  protected
-
+  # Utility Methods
   def self.spool_dir
     File.join(Rails.root, "tmp")
   end
 
+  def self.compressed_spool_dir
+    File.join(spool_dir, "compressed")
+  end
+
+  def self.decompressed_spool_dir
+    File.join(spool_dir, "uncompressed")
+  end
 end
