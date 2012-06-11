@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Lunar Landing Page</title>
+    <title>Structure.cc - DMARC Report Analysis</title>
     <meta name="description" content="Littlespark Coming soon page">
     <meta name="author" content="littlespark VT">
 
@@ -32,38 +32,43 @@
     <div class="container">
       <div class="row masthead">
         <div class="span12">
-          <h1 class="logo">Structure</h1>
+          <h1 class="logo">Structure.cc</h1>
         </div>
       </div>
       <div class="row hero">
-        <div class="span6 hero">
+       <div class="span6">
+          <h2>DMARC Reporting & Analysis</h2>
+
+          <%= image_tag "splash/robot.png", :class => "robot" %>
+        </div>
+
+        <div class="span6">
           <h2>What is this?</h2>
-          <p>Lunar is a simple landing page that will help you collect information from your visitors. It has a fully functional counter and is easy to set up. Template by <a href="http://www.littlesparkvt.com">LittleSparkVt</a>, check out our other templates at <a href="http://wrapbootstrap.com/user/littlesparkvt"> Wrap Bootstrap</a>.</p>
-
-            <!-- Begin MailChimp Signup Form -->
-	    <h2>Join our mailing list!</h2>
-            <div id="mc_embed_signup">
-              <form action="http://pixsi.us5.list-manage.com/subscribe/post?u=75cfe5aab3a9ef1b7363b4c55&amp;id=4bb054a9d6" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="well form-inline validate" target="_blank">
-                <div class="mc-field-group">
-	          <label for="mce-EMAIL">Email Address:</label>
-	          <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Your email address">
-                  <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
-                </div>
-	        <div id="mce-responses" class="clear">
-		  <div class="response" id="mce-error-response" style="display:none"></div>
-		  <div class="response" id="mce-success-response" style="display:none"></div>
-	        </div>	
-                <div class="clear"></div>
-              </form>
-            </div>
-
+          <p>Structure is a little service that makes sense of your daily <strong>DMARC</strong> reports.  You send (or forward) your daily reports to us and we'll provide you with actionable information and in-depth statistics based on the results.</p>
+          <h2>When will it be live?</h2>
+          <p>In order to ensure we get the formula right, we're currently in closed beta.  We're allowing select customers to participate based on their needs and experience. <em>Service will remain free for all beta participants for life!</em>  If you're interested please join our mailing list for more information!</p>
+          <!-- Begin MailChimp Signup Form -->
+	  <h2>Join our mailing list!</h2>
+          <div id="mc_embed_signup">
+            <form action="http://pixsi.us5.list-manage.com/subscribe/post?u=75cfe5aab3a9ef1b7363b4c55&amp;id=4bb054a9d6" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="well form-inline validate" target="_blank">
+              <div class="mc-field-group">
+	        <label for="mce-EMAIL">Email Address:</label>
+	        <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Your email address">
+                <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+              </div>
+	      <div id="mce-responses" class="clear">
+		<div class="response" id="mce-error-response" style="display:none"></div>
+		<div class="response" id="mce-success-response" style="display:none"></div>
+	      </div>	
+              <div class="clear"></div>
+            </form>
+          </div>
+          
 <!--End mc_embed_signup-->
         </div>
 
 
-        <div class="span6">
-          <%= image_tag "splash/robot.png" %>
-        </div>
+ 
       </div>
       
       <!--
@@ -78,13 +83,10 @@
       </div>    
       -->
       <div class="row footer">
-        <div class="span6">
-          <p>&copy; <%= link_to "Structure.cc", "http://www.structure.cc"%> 2012</p>
-        </div>
-        <div class="span6">
-<!--          <ul>
-            <li><a href="https://twitter.com/#!/littlesparkvt"><%= image_tag "splash/twitter2.png" %></a></li>
-          </ul>-->
+        <div class="span6 offset6">
+          <p>&copy;2012 <%= link_to "Structure.cc", "http://www.structure.cc"%> |  
+            Email: <a href="mailto:info@structure.cc">info@structure.cc</a>
+          </p>
         </div>
       </div>
 

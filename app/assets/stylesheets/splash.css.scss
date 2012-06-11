@@ -3,7 +3,7 @@
 
 body {
   background: image_url("splash/bg.png") repeat;
-  padding-top:90px;
+  padding-top:50px;
 }
 
 a:hover {
@@ -31,12 +31,12 @@ a {
   text-transform: uppercase;
 }
 
-.hero h2 {
-  margin-top: 30px;
+.robot {
+  margin-top:40px;
 }
 
 .hero p {
-  font-size: 1.8em;
+  font-size: 1.5em;
   line-height: 1.5em;
 }
 
