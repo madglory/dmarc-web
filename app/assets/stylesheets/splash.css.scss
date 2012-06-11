@@ -1,0 +1,70 @@
+@import "bootstrap";
+@import "bootstrap-responsive";
+
+body {
+  background: image_url("splash/bg.png") repeat;
+  padding-top:90px;
+}
+
+a:hover {
+  color: #005580;
+  text-decoration: underline;
+}
+a:hover, a:active {
+  outline: 0;
+}
+a:hover, a:active {
+  outline: 0;
+}
+a {
+  color: #08C;
+  text-decoration: none;
+}
+
+.masthead h1 {
+  font-family: 'Anton', sans-serif;
+  font-size: 6em;
+  line-height: 1em;
+  font-weight: 200;
+  text-shadow: 2px 2px 3px white;
+  filter: dropshadow(color=#fff, offx=2, offy=2);
+  text-transform: uppercase;
+}
+
+.hero h2 {
+  margin-top: 30px;
+}
+
+.hero p {
+  font-size: 1.8em;
+  line-height: 1.5em;
+}
+
+.hero form {
+  margin-top: 16px;
+}
+
+.hasCountdown {
+  font-family: 'Anton', sans-serif;
+  font-size: 510%;
+  font-weight: 200;
+  line-height: 120%;
+  color: #09F;
+  text-shadow: 2px 2px 3px white;
+  background-color: none;
+  border: none;
+}
+
+.footer {
+  height: 80px;
+}
+
+.footer ul {
+  margin-top: 10px;
+}
+
+.footer li {
+  display: inline;
+  list-style-type: none;
+  padding-right: 20px;
+}
