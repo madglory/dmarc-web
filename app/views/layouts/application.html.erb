@@ -1,14 +1,105 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>DmarcWeb</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Lunar Landing Page</title>
+    <meta name="description" content="Littlespark Coming soon page">
+    <meta name="author" content="littlespark VT">
 
-<%= yield %>
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
 
-</body>
+    <!-- Le styles -->
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+        <%= javascript_include_tag "application" %>
+        <%= csrf_meta_tags %>
+
+        <link href='http://fonts.googleapis.com/css?family=Anton' rel='stylesheet' type='text/css'>
+
+        <!-- Le fav and touch icons -->
+        <link rel="shortcut icon" href="images/favicon.ico">
+        <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+        <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="row masthead">
+        <div class="span12">
+          <h1 class="logo">Structure</h1>
+        </div>
+      </div>
+      <div class="row hero">
+        <div class="span6 hero">
+          <h2>What is this?</h2>
+          <p>Lunar is a simple landing page that will help you collect information from your visitors. It has a fully functional counter and is easy to set up. Template by <a href="http://www.littlesparkvt.com">LittleSparkVt</a>, check out our other templates at <a href="http://wrapbootstrap.com/user/littlesparkvt"> Wrap Bootstrap</a>.</p>
+            <form class="well form-inline" id="formID" action="index.php" method="post">
+              <label>Get updates</label>
+              <input type="text" name="email" id="email" class="validate[required,custom[email]] text-input span3" placeholder="Your email address" />
+              <button type="submit" id="submit" class="btn">Submit</button>
+        </div>
+
+
+        <div class="span6">
+          <%= image_tag "splash/robot.png" %>
+        </div>
+      </div>
+      
+      <!--
+      <div class="row countdown">
+        <div class="span12">
+          
+          <h2>Time until site launch:</h2>
+
+          <div id="counter">
+          </div>
+        </div>
+      </div>    
+      -->
+      <div class="row footer">
+        <div class="span6">
+          <p>&copy; <%= link_to "Structure.cc", "http://www.structure.cc"%> 2012</p>
+        </div>
+        <div class="span6">
+<!--          <ul>
+            <li><a href="https://twitter.com/#!/littlesparkvt"><%= image_tag "splash/twitter2.png" %></a></li>
+          </ul>-->
+        </div>
+      </div>
+
+    </div> <!-- /container -->
+    <!-- Le javascript
+         ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    
+    <%= javascript_include_tag "application" %>
+    <script type="text/javascript">
+          // CHANGE THESE NUMBERS TO SPECIFY YOUR LAUNCH DATE
+          $(function () {
+          var liftoffTime = new Date(2012, 7 - 1, 22, 11, 00);
+          $('#counter').countdown({until: liftoffTime, 
+          layout: '{dn} {dl}, {hn} {hl}, {mnn} {ml}, {snn} {sl}'});
+          });
+          $(function(){$('#counter').css("background","none")});
+    </script>
+    <script type="text/javascript"> 
+      $(document).ready(function() {
+      // SUCCESS AJAX CALL, replace "success: false," by:     success : function() { callSuccessFunction() }, 
+      $("#formID").validationEngine({
+      success :  false,
+      failure : function() {}
+      })
+      //$.validationEngine.buildPrompt("#date","This is an example","error")       // Exterior prompt build example
+      //$.validationEngine.closePrompt(".date")                      // Exterior prompt close example
+      });
+    </script>
+ 
+  </body>
+
 </html>

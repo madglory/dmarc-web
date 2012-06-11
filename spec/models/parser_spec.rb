@@ -5,49 +5,29 @@ describe Parser do
   # pending "add some examples to (or delete) #{__FILE__}"
 
   before(:all) do
-    @parser = Parser.new
+    @file = File.join(Rails.root, 'spec/fixtures', 'google.com!gamebattles.com!1339027200!1339113599.xml')
+    @document = Nokogiri::XML.parse(File.open(@file))
   end
 
-  it "should find all .zip files in a directory" do
-    # Setup
-    num_files = Random.rand(1..9)
-    tmpdir = Dir.mktmpdir
-    tmpfiles = (1..num_files).collect{|i| Tempfile.new([i.to_s, '.zip'], tmpdir)}
-
-    # Test
-    Parser.find_reports(tmpdir).length.should == num_files
-
-    # Delete the tmpdir containting all the files
-    FileUtils.remove_entry_secure tmpdir
+  it "builds a Nokogiri document from a file" do
+    document = Parser.build_document_from @file
+    document.to_xml.should == @document.to_xml
   end
 
-  it "should extract all files contained in an array of zip files" do
-    # Setup
-    num_files = Random.rand(1..3)
-    tmpdir = Dir.mktmpdir
+  it "extracts a valid report when given a sample file" do
+    report = Parser.extract_report_from @document
+    report.should be_valid
+  end
 
-    # Create some temp files
-    xmlfiles = (1..num_files).collect{|i| Tempfile.new([i.to_s, ".xml"], tmpdir)}
+  it "extracts valid reports when given a sample file and a valid report" do
+    report = Parser.extract_report_from @document
+    report.should be_valid
 
-    # Grab some unused zip file names
-    zipfiles = (1..num_files).collect{|i| Tempfile.new([i.to_s, ".zip"], tmpdir)}
-    zipfiles.collect!{|file| path = file.path; file.unlink; path}
-
-    # Create a series of zipfiles
-    zipfiles.each do |zipfile|
-      Zip::Archive.open(zipfile, Zip::BEST_SPEED) do |ar|
-        xmlfiles.each do |file|
-          ar.add_file(file.path) # add file to zip archive
-        end
-      end
+    records = Parser.extract_records_from @document, report
+    records.length.should be >= 1
+    records.each do |record|
+      record.should be_valid
     end
-
-    # Test
-    Parser.decompress_reports(zipfiles).length == num_files * num_files
-
-    # Delete the tmpdir containting all the files
-    FileUtils.remove_entry_secure tmpdir
   end
-
 
 end

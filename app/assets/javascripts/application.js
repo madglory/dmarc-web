@@ -12,4 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require jquery.countdown.min
+//= require jquery.validationEngine
+//= require jquery.validationEngine-en
+//= require bootstrap

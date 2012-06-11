@@ -1,59 +1,65 @@
-require 'zipruby'
-require 'fileutils'
+require 'nokogiri'
 
 class Parser
 
+  extend ParserUtils
+
   # Main entry point
   def self.process
-
-  end
-
-  # TODO: Extract into a archive utils module
-  # Returns all files for a given set of extentsions in a given directory
-  def self.find_reports(dir = compressed_spool_dir, extensions = ['zip'])
-
-    reports = extensions.collect do |ext|
-      Dir.glob(File.join(dir, '*.'+ext))
-    end
-
-    reports.flatten
-  end
-
-  # Extract XML files from an array of ZIP files
-  def self.decompress_reports(reports=[], dir = decompressed_spool_dir )
-
-    files = []
-
+    zip_files = find_files
+    reports   = decompress_files(zip_files)
     reports.each do |report|
-      Zip::Archive.open(report) do |ar|
-        ar.each do |zf|
-          if zf.directory?
-            FileUtils.mkdir_p(zf.name)
-          else
-            dirname = File.dirname(zf.name)
-            FileUtils.mkdir_p(dirname) unless File.exist?(dirname)
-            open(zf.name, 'wb') do |f|
-              f << zf.read
-            end
-            files << zf.name
-          end
-        end
-      end
+      document = build_document_from report
+      report   = extract_report_from document
+      records  = extract_records_from(document, report)
     end
-
-    files
+    return true
   end
 
-  # Utility Methods
-  def self.spool_dir
-    File.join(Rails.root, "tmp")
+  def self.build_document_from(file)
+    Rails.logger.debug "Parser is starting #{file}"
+    Nokogiri::XML.parse(File.open(file))
   end
 
-  def self.compressed_spool_dir
-    File.join(spool_dir, "compressed")
+  def self.extract_report_from(document)
+    attributes = {
+      :provider_name                       => document.xpath('//org_name').inner_text,
+      :provider_email                      => document.xpath('//email').inner_text,
+      :provider_contact_info               => document.xpath('//extra_contact_info').inner_text,
+      :report_id                           => document.xpath('//report_id').inner_text,
+      :begins_at                           => Time.at(document.xpath('//date_range/begin').inner_text.to_i),
+      :ends_at                             => Time.at(document.xpath('//date_range/end').inner_text.to_i),
+      :dkim_alignment_mode                 => document.xpath('//policy_published/adkim').inner_text,
+      :spf_alignment_mode                  => document.xpath('//policy_published/aspf').inner_text,
+      :requested_domain_handling_policy    => document.xpath('//policy_published/p').inner_text,
+      :requested_subdomain_handling_policy => document.xpath('//policy_published/sp').inner_text,
+      :sampling_rate                       => document.xpath('//policy_published/pct').inner_text,
+      :domain                              => document.xpath('//policy_published/domain').inner_text
+    }
+    Rails.logger.debug "Parser about to create a report using " + attributes.inspect
+    report=Report.find_or_create_by(attributes)
   end
 
-  def self.decompressed_spool_dir
-    File.join(spool_dir, "uncompressed")
+  def self.extract_records_from(document, report=Report.new)
+    document.xpath('//record').each do |record|
+
+      auth_results     = Hash.from_xml(record.xpath('auth_results').first.to_xml)["auth_results"]
+      policy_evaluated = Hash.from_xml((record.xpath('row/policy_evaluated').first || {}).to_xml)["policy_evaluated"]
+      identifiers      = Hash.from_xml((record.xpath('identifiers').first || {}).to_xml)["identifiers"]
+
+      attributes = {
+        :source_ip => record.xpath('row/source_ip').inner_text,
+        :count => record.xpath('row/count').inner_text
+      }
+      # TODO: This is completely wrong.  I think it continually
+      # appends records to this report.
+      record = report.records.find_or_create_by attributes
+      record.policy_evaluated = PolicyEvaluated.new(policy_evaluated)
+      record.auth_results.find_or_initialize_by auth_results
+      record.identities.find_or_initialize_by   identifiers
+    end
+    report.save
+    report.records
   end
+
 end
