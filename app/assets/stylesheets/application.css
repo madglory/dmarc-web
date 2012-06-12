@@ -11,5 +11,6 @@
  *= require_self
  *= require 'jquery.countdown'
  *= require 'validationEngine.jquery'
+ *= require 'main'
  *= require 'splash'
  */

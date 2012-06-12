@@ -7,7 +7,7 @@
     <th></th>
   </tr>
 
-<% @reports.each do |report| %>
+<% @reports.each_entry do |report| %>
   <tr>
     <td><%= link_to 'Show', report %></td>
     <td><%= link_to 'Edit', edit_report_path(report) %></td>

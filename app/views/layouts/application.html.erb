@@ -13,110 +13,18 @@
 
     <!-- Le styles -->
     <%= stylesheet_link_tag    "application", :media => "all" %>
-        <%= javascript_include_tag "application" %>
-        <%= csrf_meta_tags %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
 
-        <link href='http://fonts.googleapis.com/css?family=Anton' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Anton' rel='stylesheet' type='text/css'>
 
-        <!-- Le fav and touch icons -->
-        <link rel="shortcut icon" href="images/favicon.ico">
-        <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-
-        <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
 
   </head>
 
   <body>
-
-    <div class="container">
-      <div class="row masthead">
-        <div class="span12">
-          <h1 class="logo">Structure.cc</h1>
-        </div>
-      </div>
-      <div class="row hero">
-       <div class="span6">
-          <h2>DMARC Reporting & Analysis</h2>
-
-          <%= image_tag "splash/robot.png", :class => "robot" %>
-        </div>
-
-        <div class="span6">
-          <h2>What is this?</h2>
-          <p>Structure is a little service that makes sense of your daily <strong>DMARC</strong> reports.  You send (or forward) your daily reports to us and we'll provide you with actionable information and in-depth statistics based on the results.</p>
-          <h2>When will it be live?</h2>
-          <p>In order to ensure we get the formula right, we're currently in closed beta.  We're allowing select customers to participate based on their needs and experience. <em>Service will remain free for all beta participants for life!</em>  If you're interested please join our mailing list for more information!</p>
-          <!-- Begin MailChimp Signup Form -->
-	  <h2>Join our mailing list!</h2>
-          <div id="mc_embed_signup">
-            <form action="http://pixsi.us5.list-manage.com/subscribe/post?u=75cfe5aab3a9ef1b7363b4c55&amp;id=4bb054a9d6" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="well form-inline validate" target="_blank">
-              <div class="mc-field-group">
-	        <label for="mce-EMAIL">Email Address:</label>
-	        <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Your email address">
-                <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
-              </div>
-	      <div id="mce-responses" class="clear">
-		<div class="response" id="mce-error-response" style="display:none"></div>
-		<div class="response" id="mce-success-response" style="display:none"></div>
-	      </div>	
-              <div class="clear"></div>
-            </form>
-          </div>
-          
-<!--End mc_embed_signup-->
-        </div>
-
-
- 
-      </div>
-      
-      <!--
-      <div class="row countdown">
-        <div class="span12">
-          
-          <h2>Time until site launch:</h2>
-
-          <div id="counter">
-          </div>
-        </div>
-      </div>    
-      -->
-      <div class="row footer">
-        <div class="span6 offset6">
-          <p>&copy;2012 <%= link_to "Structure.cc", "http://www.structure.cc"%> |  
-            Email: <a href="mailto:info@structure.cc">info@structure.cc</a>
-          </p>
-        </div>
-      </div>
-
-    </div> <!-- /container -->
-    <!-- Le javascript
-         ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    
-    <%= javascript_include_tag "application" %>
-    <script type="text/javascript">
-          // CHANGE THESE NUMBERS TO SPECIFY YOUR LAUNCH DATE
-          $(function () {
-          var liftoffTime = new Date(2012, 7 - 1, 22, 11, 00);
-          $('#counter').countdown({until: liftoffTime, 
-          layout: '{dn} {dl}, {hn} {hl}, {mnn} {ml}, {snn} {sl}'});
-          });
-          $(function(){$('#counter').css("background","none")});
-    </script>
-    <script type="text/javascript"> 
-      $(document).ready(function() {
-      // SUCCESS AJAX CALL, replace "success: false," by:     success : function() { callSuccessFunction() }, 
-      $("#formID").validationEngine({
-      success :  false,
-      failure : function() {}
-      })
-      //$.validationEngine.buildPrompt("#date","This is an example","error")       // Exterior prompt build example
-      //$.validationEngine.closePrompt(".date")                      // Exterior prompt close example
-      });
-    </script>
- 
-  </body>
-
-</html>
