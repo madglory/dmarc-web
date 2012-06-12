@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Structure.cc - DMARC Report Analysis</title>
+    <title>Structure.cc - DMARC Analysis &amp; Reporting</title>
     <meta name="description" content="Littlespark Coming soon page">
     <meta name="author" content="littlespark VT">
 
@@ -36,7 +36,7 @@
         </div>
       </div>
       <div class="row hero">
-       <div class="span6">
+        <div class="span6">
           <h2>DMARC Reporting & Analysis</h2>
 
           <%= image_tag "splash/robot.png", :class => "robot" %>
@@ -51,36 +51,37 @@
 	  <h2>Join our mailing list!</h2>
           <div id="mc_embed_signup">
             <form action="http://structure.us5.list-manage1.com/subscribe/post?u=75cfe5aab3a9ef1b7363b4c55&amp;id=2238c81fb4" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
-            <div class="mc-field-group">
-	      <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Your email address">
-              <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
-            </div>
-	    <div id="mce-responses" class="clear">
-	      <div class="response" id="mce-error-response" style="display:none"></div>
-	      <div class="response" id="mce-success-response" style="display:none"></div>
-	    </div>	
-            <div class="clear"></div>
+              <div class="mc-field-group">
+	        <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Your email address">
+                <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+              </div>
+	      <div id="mce-responses" class="clear">
+	        <div class="response" id="mce-error-response" style="display:none"></div>
+	        <div class="response" id="mce-success-response" style="display:none"></div>
+	      </div>	
+              <div class="clear"></div>
             </form>
           </div>
           
-<!--End mc_embed_signup-->
+          <!--End mc_embed_signup-->
+
         </div>
 
 
- 
+        
       </div>
       
       <!--
-      <div class="row countdown">
-        <div class="span12">
-          
-          <h2>Time until site launch:</h2>
+          <div class="row countdown">
+            <div class="span12">
+              
+              <h2>Time until site launch:</h2>
 
-          <div id="counter">
-          </div>
-        </div>
-      </div>    
-      -->
+              <div id="counter">
+              </div>
+            </div>
+          </div>    
+          -->
       <div class="row footer">
         <div class="span6 offset6">
           <p>&copy;2012 <%= link_to "Structure.cc", "http://www.structure.cc"%> |  
@@ -96,13 +97,13 @@
     
     <%= javascript_include_tag "application" %>
     <script type="text/javascript">
-          // CHANGE THESE NUMBERS TO SPECIFY YOUR LAUNCH DATE
-          $(function () {
-          var liftoffTime = new Date(2012, 7 - 1, 22, 11, 00);
-          $('#counter').countdown({until: liftoffTime, 
-          layout: '{dn} {dl}, {hn} {hl}, {mnn} {ml}, {snn} {sl}'});
-          });
-          $(function(){$('#counter').css("background","none")});
+      // CHANGE THESE NUMBERS TO SPECIFY YOUR LAUNCH DATE
+      $(function () {
+      var liftoffTime = new Date(2012, 7 - 1, 22, 11, 00);
+      $('#counter').countdown({until: liftoffTime, 
+      layout: '{dn} {dl}, {hn} {hl}, {mnn} {ml}, {snn} {sl}'});
+      });
+      $(function(){$('#counter').css("background","none")});
     </script>
     <script type="text/javascript"> 
       $(document).ready(function() {
@@ -115,7 +116,83 @@
       //$.validationEngine.closePrompt(".date")                      // Exterior prompt close example
       });
     </script>
- 
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-32597834-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+    <!-- AddThis Welcome BEGIN -->
+    <script type="text/javascript" src="//s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4fd7768413d24ce9"></script>
+    <script type='text/javascript'>
+      addthis.bar.initialize({'default':{
+      "backgroundColor": "#000000",
+      "buttonColor": "#098DF4",
+      "textColor": "#FFFFFF",
+      "buttonTextColor": "#FFFFFF"
+      },rules:[
+      {
+      "name": "AnyOther",
+      "message": "If you're interested in our product, do us a favor:",
+      "action": {
+      "type": "button",
+      "text": "Tweet it!",
+      "verb": "share",
+      "service": "twitter",
+      "url": "http://www.structure.cc"
+      }
+      },
+      {
+      "name": "Twitter",
+      "match": {
+      "referringService": "twitter"
+      },
+      "message": "If you find this page helpful:",
+      "action": {
+      "type": "button",
+      "text": "Tweet it!",
+      "verb": "share",
+      "service": "twitter"
+      }
+      },
+      {
+      "name": "Facebook",
+      "match": {
+      "referringService": "facebook"
+      },
+      "message": "Tell your friends about us:",
+      "action": {
+      "type": "button",
+      "text": "Share on Facebook",
+      "verb": "share",
+      "service": "facebook"
+      }
+      },
+      {
+      "name": "Google",
+      "match": {
+      "referrer": "google.com"
+      },
+      "message": "If you like this page, let Google know:",
+      "action": {
+      "type": "button",
+      "text": "+1",
+      "verb": "share",
+      "service": "google_plusone_share"
+      }
+      }
+      ]});
+    </script>
+    <!-- AddThis Welcome END -->
+    
   </body>
 
 </html>
