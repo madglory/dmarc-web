@@ -5,7 +5,8 @@ gem 'rails', '3.2.5'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem "mongoid", "~> 3.0.0.rc"
+#gem "mongoid", "~> 3.0.0.rc"
+gem "pg"
 
 gem 'pry-rails'
 gem 'rspec'
@@ -13,7 +14,7 @@ gem 'resque'
 
 group :test, :development do
   gem "rspec-rails", "~> 2.0"
-  gem "mongoid-rspec"
+  #gem "mongoid-rspec"
   gem "capybara"
   gem 'shoulda-matchers'
   gem 'factory_girl_rails'
@@ -39,6 +40,7 @@ gem "foreman"
 gem 'zipruby'
 
 gem "nokogiri"
+gem "sax-machine", "~> 0.2.0.rc1"
 
 # Gems used only for assets and not required
 # in production environments by default.

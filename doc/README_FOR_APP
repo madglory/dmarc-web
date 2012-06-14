@@ -1,2 +1,7 @@
 Use this README file to introduce your application and point to useful places in the API for learning more.
 Run "rake doc:app" to generate API documentation for your models, controllers, helpers, and libraries.
+
+
+# Install libxml2 2.8.9
+brew install libxml2
+bundle config build.nokogiri --with-xml2-include=/usr/local/Cellar/libxml2/2.8.0/include/libxml2 --with-xml2-lib=/usr/local/Cellar/libxml2/2.8.0/lib   

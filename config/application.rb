@@ -1,7 +1,7 @@
 require File.expand_path('../boot', __FILE__)
-
+require 'nokogiri' # TODO: Can probably nuke this.
 # Pick the frameworks you want:
-# require "active_record/railtie"
+require "active_record/railtie"
 require "action_controller/railtie"
 require "action_mailer/railtie"
 require "active_resource/railtie"
@@ -17,6 +17,11 @@ end
 
 module DmarcWeb
   class Application < Rails::Application
+
+    # Might as well use Nokogiri in rails since we're loading it for
+    # the parser.
+    ActiveSupport::XmlMini.backend = 'Nokogiri'
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
