@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-  targetNamespace="http://dmarc.org/dmarc-xml/0.1">
+  targetNamespace="http://dmarc.org/dmarc-xml/0.1"
+  xmlns="http://dmarc.org/dmarc-xml/0.1">
 
 <!-- The time range in UTC covered by messages in this report, specified in seconds since epoch. -->
 <xs:complexType name="DateRangeType">
@@ -127,9 +128,7 @@ trusted_forwarder:  Message authentication failure was anticipated by
 <!-- Credit to java2s.com for IPv6 regex http://www.java2s.com/Code/XML/XML-Schema/IPv6addressesareeasiertodescribeusingasimpleregex.htm -->
 <xs:simpleType name="IPAddress">
   <xs:restriction base="xs:string">
-    <xs:pattern value="((1?[0-9]?[0-9]|2[0-4][0-9]|25[0-5]).){3}
-                (1?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])|
-                ([A-Fa-f0-9]{1,4}:){7}[A-Fa-f0-9]{1,4}"/>
+    <xs:pattern value="((1?[0-9]?[0-9]|2[0-4][0-9]|25[0-5]).){3}(1?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])|([A-Fa-f0-9]{1,4}:){7}[A-Fa-f0-9]{1,4}"/>
   </xs:restriction>
 </xs:simpleType>
 

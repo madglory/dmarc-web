@@ -1,5 +1,5 @@
 <?xml version="1.0"?>	
-<feedback>	
+<provider:feedback xmlns:provider="http://dmarc.org/dmarc-xml/0.1">	
   <report_metadata>	
     <org_name>Yahoo! Inc.</org_name>	
     <email>postmaster@dmarc.yahoo.com</email>	
@@ -424,4 +424,4 @@
       </spf>	
     </auth_results>	
   </record>	
-</feedback>	
+</provider:feedback>	
