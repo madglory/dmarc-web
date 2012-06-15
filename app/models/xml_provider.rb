@@ -1,5 +1,5 @@
 class Provider
-  SAXMachine.configure(X) do |c|
+  SAXMachine.configure(Provider) do |c|
 
     c.ancestor :ancestor
   end
