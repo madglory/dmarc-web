@@ -5,7 +5,6 @@ gem 'rails', '3.2.5'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-#gem "mongoid", "~> 3.0.0.rc"
 gem "pg"
 
 gem 'pry-rails'
@@ -35,12 +34,16 @@ gem 'devise'
 # Frontend
 gem "kaminari"
 
+# Process management
 gem "foreman"
 
+# Parsing
 gem 'zipruby'
-
 gem "nokogiri"
 gem "sax-machine", "~> 0.2.0.rc1"
+
+# Uploads
+gem 'carrierwave'
 
 # Gems used only for assets and not required
 # in production environments by default.

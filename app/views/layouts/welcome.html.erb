@@ -149,9 +149,17 @@
 
     </script>
 
+    <script type="text/javascript">
+      $(document).ready(function(){
+      $("mc-embedded-subscribe").click(function(){
+      _gaq.push(['_trackEvent', 'Newsletter', 'Sign Up']);
+      });
+      });
+    </script>
+
     <!-- AddThis Welcome BEGIN -->
     <script type="text/javascript" src="//s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4fd7768413d24ce9"></script>
-    <script type='text/javascript'>
+    <script type="text/javascript">
       addthis.bar.initialize({'default':{
       "backgroundColor": "#000000",
       "buttonColor": "#098DF4",

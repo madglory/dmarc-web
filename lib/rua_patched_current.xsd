@@ -1,7 +1,9 @@
 <?xml version="1.0"?>
+
+<!-- @BJC - Adding defualt namespace -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-  targetNamespace="http://dmarc.org/dmarc-xml/0.1"
-  xmlns="http://dmarc.org/dmarc-xml/0.1">
+  targetNamespace="urn:dmarc"
+  xmlns="urn:dmarc">
 
 <!-- The time range in UTC covered by messages in this report, specified in seconds since epoch. -->
 <xs:complexType name="DateRangeType">
@@ -52,7 +54,8 @@
     <!-- The policy to apply to messages from the domain. -->
     <xs:element name="p" type="DispositionType"/>
     <!-- The policy to apply to messages from subdomains. -->
-    <xs:element name="sp" type="DispositionType"/>
+    <!-- @BJC - Makes subdomain optional -->
+    <xs:element name="sp"  minOccurs="0" type="DispositionType"/>
     <!-- The percent of messages to which policy applies. -->
     <xs:element name="pct" type="xs:integer"/>
   </xs:all>

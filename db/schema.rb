@@ -11,14 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120610004806) do
+ActiveRecord::Schema.define(:version => 20120613165946) do
+
+  create_table "dkim_auth_results", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "policy_publisheds", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "providers", :force => true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.text     "contact_info"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "records", :force => true do |t|
@@ -32,22 +39,7 @@ ActiveRecord::Schema.define(:version => 20120610004806) do
     t.datetime "updated_at",       :null => false
   end
 
-  create_table "reports", :force => true do |t|
-    t.string   "report_id"
-    t.datetime "begins_at"
-    t.datetime "ends_at"
-    t.string   "dkim_alignment_mode"
-    t.string   "spf_alignment_mode"
-    t.string   "requested_domain_handling_policy"
-    t.string   "requested_subdomain_handling_policy"
-    t.string   "sampling_rate"
-    t.string   "domain"
-    t.integer  "provider_id"
-    t.datetime "created_at",                          :null => false
-    t.datetime "updated_at",                          :null => false
-  end
-
-  create_table "users", :force => true do |t|
+  create_table "spf_auth_results", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
