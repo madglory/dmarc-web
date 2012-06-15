@@ -1,4 +1,4 @@
-class User < ActiveRecord::Base
+sclass User < ActiveRecord::Base
   # attr_accessible :title, :body
 
   has_many :reports

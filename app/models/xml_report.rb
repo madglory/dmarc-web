@@ -9,4 +9,7 @@ class XMLReport
   elements :error,              :as => :errors
   elements :record,             :as => :records, :class => XMLRecord
   element :policy_published,    :class => XMLPolicyPublished
+
+  attr_accessor :file
+
 end
