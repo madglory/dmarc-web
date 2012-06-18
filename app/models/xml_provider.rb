@@ -1,7 +1,3 @@
-class XmlProvider
-  SAXMachine.configure(Provider) do |c|
-
-    c.ancestor :ancestor
-  end
+class XMLProvider
 
 end

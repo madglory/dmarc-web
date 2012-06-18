@@ -1,5 +1,5 @@
 require 'spec_helper'
 
-describe XmlReportsControllerController do
+describe XmlReportsController do
 
 end

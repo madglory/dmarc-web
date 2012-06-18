@@ -11,35 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120613165946) do
+ActiveRecord::Schema.define(:version => 20120615184421) do
 
-  create_table "dkim_auth_results", :force => true do |t|
+  create_table "reports", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
-  create_table "policy_publisheds", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "providers", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "records", :force => true do |t|
-    t.string   "source_ip"
-    t.integer  "count"
-    t.text     "auth_results"
-    t.text     "policy_evaluated"
-    t.text     "identifiers"
-    t.integer  "report_id"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
-  end
-
-  create_table "spf_auth_results", :force => true do |t|
+  create_table "users", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

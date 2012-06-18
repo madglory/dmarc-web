@@ -1,4 +1,4 @@
-class XmlRecord
+class XMLRecord
   include SAXMachine
   element :source_ip
   element :count,       :as => :message_count

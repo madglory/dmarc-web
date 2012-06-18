@@ -1,4 +1,4 @@
-class XmlPolicyPublished
+class XMLPolicyPublished
   include SAXMachine
   element :domain
   element :adkim, :as => :dkim_alignment
