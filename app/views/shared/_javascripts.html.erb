@@ -1,0 +1,115 @@
+<!-- Le javascript
+     ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+
+<%= javascript_include_tag "application" %>
+<script type="text/javascript">
+  // CHANGE THESE NUMBERS TO SPECIFY YOUR LAUNCH DATE
+  $(function () {
+  var liftoffTime = new Date(2012, 7 - 1, 22, 11, 00);
+  $('#counter').countdown({until: liftoffTime, 
+  layout: '{dn} {dl}, {hn} {hl}, {mnn} {ml}, {snn} {sl}'});
+  });
+  $(function(){$('#counter').css("background","none")});
+</script>
+<script type="text/javascript"> 
+  $(document).ready(function() {
+  // SUCCESS AJAX CALL, replace "success: false," by:     success : function() { callSuccessFunction() }, 
+  $("#formID").validationEngine({
+  success :  false,
+  failure : function() {}
+  })
+  //$.validationEngine.buildPrompt("#date","This is an example","error")       // Exterior prompt build example
+  //$.validationEngine.closePrompt(".date")                      // Exterior prompt close example
+  });
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32597834-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+  $("mc-embedded-subscribe").click(function(){
+  _gaq.push(['_trackEvent', 'Newsletter', 'Sign Up']);
+  });
+  });
+</script>
+
+<!-- AddThis Welcome BEGIN -->
+<script type="text/javascript" src="//s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4fd7768413d24ce9"></script>
+<script type="text/javascript">
+  addthis.bar.initialize({'default':{
+  "backgroundColor": "#000000",
+  "buttonColor": "#098DF4",
+  "textColor": "#FFFFFF",
+  "buttonTextColor": "#FFFFFF"
+  },rules:[
+  {
+  "name": "AnyOther",
+  "message": "If you're interested in our product, do us a favor:",
+  "action": {
+  "type": "button",
+  "text": "Tweet it!",
+  "verb": "share",
+  "service": "twitter",
+  "url": "http://www.structure.cc"
+  }
+  },
+  {
+  "name": "Twitter",
+  "match": {
+  "referringService": "twitter"
+  },
+  "message": "If you find this page helpful:",
+  "action": {
+  "type": "button",
+  "text": "Tweet it!",
+  "verb": "share",
+  "service": "twitter"
+  }
+  },
+  {
+  "name": "Facebook",
+  "match": {
+  "referringService": "facebook"
+  },
+  "message": "Tell your friends about us:",
+  "action": {
+  "type": "button",
+  "text": "Share on Facebook",
+  "verb": "share",
+  "service": "facebook"
+  }
+  },
+  {
+  "name": "Google",
+  "match": {
+  "referrer": "google.com"
+  },
+  "message": "If you like this page, let Google know:",
+  "action": {
+  "type": "button",
+  "text": "+1",
+  "verb": "share",
+  "service": "google_plusone_share"
+  }
+  }
+  ]});
+</script>
+<!-- AddThis Welcome END -->
+<script>
+  var addthis_config =
+  {
+  data_ga_tracker: 'UA-32597834-1'
+  }
+</script>

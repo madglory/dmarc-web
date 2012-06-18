@@ -1,0 +1,41 @@
+<div class="row hero">
+
+  <div class="span6">
+    <h2>DMARC Reporting & Analysis</h2>
+    <%= image_tag "splash/robot.png", :class => "robot" %>
+  </div>
+
+  <div class="span6">
+    <h2>What is this?</h2>
+    <p>Structure is a little service that makes sense of your daily <strong>DMARC</strong> reports.  You send (or forward) your daily reports to us and we'll provide you with actionable information and in-depth statistics based on the results.</p>
+    <h2>When will it be live?</h2>
+    <p>In order to ensure we get the formula right, we're currently in
+    closed beta.  We're allowing select customers to participate based
+    on their needs and experience. <em>Service will remain free for
+    all beta participants for life!</em>  If you're interested please
+    join our mailing list for more information!</p>
+    <!-- Begin MailChimp Signup Form -->
+    <h2>Join our mailing list!</h2>
+    <div id="mc_embed_signup">
+      <form action="http://structure.us5.list-manage1.com/subscribe/post?u=75cfe5aab3a9ef1b7363b4c55&amp;id=2238c81fb4" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+        <div class="mc-field-group">
+	  <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Your email address">
+          <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+        </div>
+	<div id="mce-responses" class="clear">
+	  <div class="response" id="mce-error-response" style="display:none"></div>
+	  <div class="response" id="mce-success-response" style="display:none"></div>
+	</div>	
+        <div class="clear"></div>
+      </form>
+    </div>
+    <!--End mc_embed_signup-->
+    <h2>Looking for our feedback validator?</h2>
+    <p>Upload an XML feedback file here, we'll tell you if it's valid.</p>
+    <%= form_tag({:action => :feedback_upload, :controller => :reports}, :multipart => true, :class => "form-inline") do %>
+    <%= file_field_tag 'feedback', :class => "input-small" %>
+    <%= submit_tag "Validate", :class => "button" %>
+    <% end %>
+  </div>
+  
+</div>

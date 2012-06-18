@@ -2,9 +2,17 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Structure.cc - DMARC Report Analysis</title>
-    <meta name="description" content="Littlespark Coming soon page">
-    <meta name="author" content="littlespark VT">
+    <title>Structure.cc - DMARC Analysis &amp; Reporting</title>
+    <meta name="description" content="Structure.cc is a DMARC report alerting and analysis tool">
+    <meta name="keywords"    content="dmarc email report analysis tool">
+    <meta name="google-site-verification" content="-nHZzONeyh30nar4VAzDLeAoKvNLn_JQTQBF9qI3yN4">
+    <meta name="ROBOTS" content="index, nofollow">
+    <meta name="author" content="Structure.cc">
+    <meta property="og:title" content="Structure.cc - DMARC Reports, Alerts, and Analysis" />
+    <meta property="og:description" content="Structure.cc is a DMARC report alerting and analysis tool">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://www.structure.cc" />
+    <meta property="og:image" content="<%= image_path "http://www.structure.cc/assets/robot.png"%>" />
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
@@ -18,13 +26,43 @@
 
     <link href='http://fonts.googleapis.com/css?family=Anton' rel='stylesheet' type='text/css'>
 
+    <link href="http://alexgorbatchev.com/pub/sh/current/styles/shThemeDefault.css" rel="stylesheet" type="text/css" />
+    <script src="http://alexgorbatchev.com/pub/sh/current/scripts/shCore.js" type="text/javascript"></script>
+    <script src="http://alexgorbatchev.com/pub/sh/current/scripts/shAutoloader.js" type="text/javascript"></script>
+    <script src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushXml.js" type="text/javascript"></script>
+    
     <!-- Le fav and touch icons -->
     <link rel="shortcut icon" href="images/favicon.ico">
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-    
+
     <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
     <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
 
   </head>
 
-  <body>
+  <body onload="prettyPrint()" class="<%= controller.controller_name %>">
+
+    <div class="container">
+      <div class="row masthead">
+        <div class="span12">
+          <h1 class="logo">Structure.cc</h1>
+        </div>
+      </div>
+
+      <%= render "shared/hero" if (controller.controller_name == "welcome") %>
+
+      <div class="row content">
+        <div class="span12">
+          <%= yield %>
+        </div>
+      </div>
+      
+      <%= render "shared/footer" %>
+
+    </div> <!-- /container -->
+
+   <%= render "shared/javascripts" %>
+    
+  </body>
+
+</html>

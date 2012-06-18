@@ -1,0 +1,37 @@
+<ul class="navbar" id="jumpbar">
+  <li><strong>Jump to:</strong></li>
+  <li><a href="#errors">Errors (<%= @results.count %>)</a></li>
+  <li><a href="#annotated">Annotated File</a></li>
+</ul>
+
+<h2> DMARC Feedback Report Validator Results</h2>
+<h3>File : <%= @filename %></h3>
+
+<div id="errors">
+  <h3>Errors (<%= @results.count %>)  <span class="toplink"><a href="#">^ Top</a></span></h3>
+  <table>
+    <tr>
+      <th>Line #</th>
+      <th>Message</th>
+    </tr>
+    <% @results.each do |result| %>
+    <tr class='error'>
+      <td class='linenumber' title='Line 1'><%= result.line %></td>
+      <td class='parse-error'>
+        <%= result.message %> 
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>
+
+<div id="annotated">
+  <h3>Annotated File (Errors Highlighted) <span class="toplink"><a href="#">^ Top</a></h3>
+  <pre class="brush: xml; highlight: <%= @results.collect{|r| r.line}.to_s %>; toolbar: false;">
+    <%=h @transformed_doc %>
+  </pre>
+</div>
+
+<script type="text/javascript">
+  SyntaxHighlighter.all();
+</script>

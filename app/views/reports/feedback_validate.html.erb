@@ -1,0 +1,7 @@
+
+
+
+<%= form_tag({:action => :feedback_upload, :controller => :reports}, :multipart => true) do %>
+  <%= file_field_tag 'feedback' %>
+  <%= submit_tag %>
+<% end %>

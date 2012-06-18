@@ -1,0 +1,2 @@
+class XmlReportsController < ApplicationController
+end

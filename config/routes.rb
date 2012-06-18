@@ -1,4 +1,6 @@
 DmarcWeb::Application.routes.draw do
+  match "feedback_validate" => "reports#feedback_validate"
+  match "feedback_results" => "reports#feedback_upload"
   resources :reports
   resources :users
 
