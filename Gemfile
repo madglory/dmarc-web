@@ -25,6 +25,7 @@ end
 
 group :development do
   gem 'heroku'
+  gem 'cheat'
 end
 
 # Authentication & Authorization

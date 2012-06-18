@@ -31,11 +31,7 @@
     </div>
     <!--End mc_embed_signup-->
     <h2>Looking for our feedback validator?</h2>
-    <p>Upload an XML feedback file here, we'll tell you if it's valid.</p>
-    <%= form_tag({:action => :feedback_upload, :controller => :reports}, :multipart => true, :class => "form-inline") do %>
-    <%= file_field_tag 'feedback', :class => "input-small" %>
-    <%= submit_tag "Validate", :class => "button" %>
-    <% end %>
+    <p>You can find it <%= link_to "here", :new_validated_feedback %>.</p>
   </div>
   
 </div>

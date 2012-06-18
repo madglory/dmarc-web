@@ -1,0 +1,7 @@
+<h2>XML Feedback File Validator</h2>
+<h3>Validate by file upload</h3>
+
+<%= form_tag({:controller => "validated_feedbacks", :action => "create"}, :method => :post, :multipart => true, :class => "span6") do %>
+  <%= file_field_tag 'feedback' %>
+  <%= submit_tag "Validate" %>
+<% end %>

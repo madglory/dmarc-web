@@ -21,31 +21,6 @@ class ReportsController < ApplicationController
     end
   end
 
-  def feedback_validate
-
-  end
-
-
-  def feedback_upload
-    uploaded_io = params[:feedback]
-    @filename = uploaded_io.original_filename
-
-    # Load required files
-    original_doc   = Nokogiri::XML(uploaded_io.read)
-    xsd   = Nokogiri::XML::Schema(File.read('lib/rua_patched_current.xsd'))
-    xslt  = Nokogiri::XSLT(File.read('lib/provider_report_patches_current.xslt'))
-
-    # Check if root element has proper namespace
-    # errors << "Some error" if Nokogiri::Find feedback element
-
-    # Perform transform
-    @transformed_doc = xslt.transform(original_doc)
-
-    # Validate file
-    @results = [] + xsd.validate(@transformed_doc)
-
-  end
-
   # GET /reports/new
   # GET /reports/new.json
   def new

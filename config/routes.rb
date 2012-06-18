@@ -1,6 +1,10 @@
 DmarcWeb::Application.routes.draw do
-  match "feedback_validate" => "reports#feedback_validate"
-  match "feedback_results" => "reports#feedback_upload"
+
+  # Validator Routes - Purposefully not restful
+  match "validate"            => "validated_feedbacks#new",:via => :get, :as => :new_validated_feedback     # New
+  match "validate/result/:id" => "validated_feedbacks#show", :via => :get, :as => :validated_feedback    # Show
+  match "validate"            => "validated_feedbacks#create", :via => :post  # Create
+
   resources :reports
   resources :users
 
