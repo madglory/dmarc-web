@@ -27,7 +27,7 @@
 
 <div id="annotated">
   <h3>Annotated File (Errors Highlighted) <span class="toplink"><a href="#">^ Top</a></h3>
-  <pre class="brush: xml; highlight: <%= @results.collect{|r| r.line}.to_s %>; toolbar: false;">
+  <pre class="brush: xml; highlight: <%= @results.collect{|r| r.line + 1}.to_s %>; toolbar: false;">
     <%=h @transformed_doc %>
   </pre>
 </div>
