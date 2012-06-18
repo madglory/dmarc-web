@@ -1,3 +1,3 @@
-class SpfAuthResult < ActiveRecord::Base
+class XmlSpfAuthResult < ActiveRecord::Base
   # attr_accessible :title, :body
 end

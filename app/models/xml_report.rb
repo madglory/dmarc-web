@@ -1,4 +1,4 @@
-class XMLReport
+class XmlReport
   include SAXMachine
   element  :org_name,           :as => :name
   element  :email,              :as => :email
