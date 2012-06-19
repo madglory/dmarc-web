@@ -70,6 +70,7 @@ module DmarcWeb
 
     # Asset config
     config.assets.initialize_on_precompile = false
+    config.assets.precompile += ['marketing.js', 'marketing.css', 'admin.js', 'admin.css']
 
     # Enable the asset pipeline
     config.assets.enabled = true
