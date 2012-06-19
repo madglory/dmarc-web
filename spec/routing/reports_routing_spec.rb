@@ -1,34 +1,34 @@
 require "spec_helper"
 
-describe Admin::ReportsController do
+describe ReportsController do
   describe "routing" do
 
     it "routes to #index" do
-      get("/admin_reports").should route_to("admin_reports#index")
+      get("/reports").should route_to("reports#index")
     end
 
     it "routes to #new" do
-      get("/admin_reports/new").should route_to("admin_reports#new")
+      get("/reports/new").should route_to("reports#new")
     end
 
     it "routes to #show" do
-      get("/admin_reports/1").should route_to("admin_reports#show", :id => "1")
+      get("/reports/1").should route_to("reports#show", :id => "1")
     end
 
     it "routes to #edit" do
-      get("/admin_reports/1/edit").should route_to("admin_reports#edit", :id => "1")
+      get("/reports/1/edit").should route_to("reports#edit", :id => "1")
     end
 
     it "routes to #create" do
-      post("/admin_reports").should route_to("admin_reports#create")
+      post("/reports").should route_to("reports#create")
     end
 
     it "routes to #update" do
-      put("/admin_reports/1").should route_to("admin_reports#update", :id => "1")
+      put("/reports/1").should route_to("reports#update", :id => "1")
     end
 
     it "routes to #destroy" do
-      delete("/admin_reports/1").should route_to("admin_reports#destroy", :id => "1")
+      delete("/reports/1").should route_to("reports#destroy", :id => "1")
     end
 
   end

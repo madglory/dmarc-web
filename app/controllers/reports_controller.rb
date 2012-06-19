@@ -78,7 +78,7 @@ class ReportsController < ApplicationController
     @report.destroy
 
     respond_to do |format|
-      format.html { redirect_to admin_reports_url }
+      format.html { redirect_to reports_url }
       format.json { head :no_content }
     end
   end
