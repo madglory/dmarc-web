@@ -1,0 +1,52 @@
+.welcome {
+  body {
+    background: image_url("splash/bg.png") repeat;
+    padding-top:50px;
+  }
+
+  a:hover {
+    color: #005580;
+    text-decoration: underline;
+  }
+
+  a:hover, a:active {
+    outline: 0;
+  }
+
+  a:hover, a:active {
+    outline: 0;
+  }
+
+  a {
+    color: #08C;
+    text-decoration: none;
+  }
+
+  .robot {
+    margin-top:40px;
+  }
+
+  .hero p {
+    font-size: 1.5em;
+    line-height: 1.5em;
+  }
+
+  .hero form {
+    margin-top: 16px;
+  }
+
+  .footer {
+    height: 80px;
+  }
+
+  .footer ul {
+    margin-top: 10px;
+  }
+
+  .footer li {
+    display: inline;
+    list-style-type: none;
+    padding-right: 20px;
+  }
+
+}

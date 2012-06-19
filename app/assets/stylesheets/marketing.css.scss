@@ -1,0 +1,17 @@
+.masthead h1 {
+  font-family: 'Anton', sans-serif;
+  font-size: 6em;
+  line-height: 1em;
+  font-weight: 200;
+  text-shadow: 2px 2px 3px white;
+  filter: dropshadow(color=#fff, offx=2, offy=2);
+  text-transform: uppercase;
+
+}
+
+
+/* Masthead */
+.masthead h1 a {
+  color: inherit;
+  text-decoration: none;
+}

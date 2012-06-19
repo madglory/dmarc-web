@@ -7,9 +7,9 @@ class Parser
   # Main entry point
   def self.process
     zip_files = find_files
-    reports   = decompress_files(zip_files)
-    reports.each do |report|
-      document = build_document_from report
+    xml_files = decompress_files(zip_files)
+    xml_files.each do |xml_file|
+      xml_report = XMLReport.parse(report)
       report   = extract_report_from document
       records  = extract_records_from(document, report)
     end

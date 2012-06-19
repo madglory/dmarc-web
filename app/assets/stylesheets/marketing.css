@@ -11,7 +11,7 @@
  *= require_self
  *= require 'jquery.countdown'
  *= require 'validationEngine.jquery'
- *= require 'main'
- *= require 'splash'
- *= require 'reports'
+ *= require 'marketing-main'
+ *= require 'welcome'
+ *= require 'validated_feedbacks'
  */

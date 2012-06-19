@@ -1,5 +1,7 @@
 DmarcWeb::Application.routes.draw do
 
+  devise_for :users
+
   # Validator Routes - Purposefully not restful
   match "validate"            => "validated_feedbacks#new",:via => :get, :as => :new_validated_feedback     # New
   match "validate/result/:id" => "validated_feedbacks#show", :via => :get, :as => :validated_feedback    # Show
@@ -8,6 +10,7 @@ DmarcWeb::Application.routes.draw do
   resources :reports
   resources :users
 
+  match 'dashboard' => "reports#index", :via => :get, :as => "dashboard"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

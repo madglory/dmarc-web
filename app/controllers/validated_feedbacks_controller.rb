@@ -1,4 +1,6 @@
 class ValidatedFeedbacksController < ApplicationController
+  layout 'marketing'
+
 
   # GET /validated_feedbacks/1
   # GET /validated_feedbacks/1.json
